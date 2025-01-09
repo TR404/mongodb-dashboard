@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="top-bar">
+        <input id="dbUrl" type="text" placeholder="MongoDB URL" />
+        <button onclick="connectToDatabase()">Connect</button>
+        <button id="createButton" onclick="showCreateForm()">+</button>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Collections</h3>
+            <div id="collectionsList"></div>
+        </div>
+        <div class="main-content">
+            <div id="querySection" style="display: none;">
+                <h3>Query Section</h3>
+                <textarea id="queryInput" placeholder="Enter your MongoDB query..." rows="4"></textarea>
+                <button onclick="executeQuery()">Execute Query</button>
+
+                <!-- Displaying Query Results -->
+                <h4>Results</h4>
+                <div id="queryResults"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="loader" style="display: none;"></div>
+
+    <!-- Create Form -->
+    <div id="createForm" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeCreateForm()">&times;</span>
+            <h4>Create New Data</h4>
+            <textarea id="createInput" placeholder="Enter the new data..." rows="4"></textarea>
+            <button onclick="createData()">Create Data</button>
+        </div>
+    </div>
+</body>
+</html>
