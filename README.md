@@ -20,7 +20,7 @@ This project is a MongoDB Dashboard where users can pass their MongoDB URL and p
 
 1. Clone the repository:
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/TR404/mongodb-dashboard.git
     cd mongodb-dashboard
     ```
 
